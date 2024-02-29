@@ -24,7 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tool-bar.component.html',
-  styleUrl: './tool-bar.component.css',
+  styleUrl: './tool-bar.component.scss',
 })
 export class ToolBarComponent implements OnInit {
   public title = signal<string>('');

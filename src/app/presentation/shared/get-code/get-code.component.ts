@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatButtonModule, MatIconModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './get-code.component.html',
-  styleUrl: './get-code.component.css'
+  styleUrl: './get-code.component.scss'
 })
 export class GetCodeComponent {
 

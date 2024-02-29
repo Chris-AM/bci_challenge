@@ -9,7 +9,7 @@ import { ToolBarComponent } from '../shared/tool-bar/tool-bar.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterOutlet, ToolBarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'bci_challange';

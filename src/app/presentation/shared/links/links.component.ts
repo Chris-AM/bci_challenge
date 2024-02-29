@@ -17,7 +17,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   imports: [RouterOutlet, RouterModule, MatButtonModule, MatIconModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './links.component.html',
-  styleUrl: './links.component.css',
+  styleUrl: './links.component.scss',
 })
 export class LinksComponent implements OnInit {
   public linkItems = signal<LinkModel[]>([]);
