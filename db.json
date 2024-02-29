@@ -1,16 +1,37 @@
 {
     "paths": [
         {
+            "id": 1,
             "name": "home",
             "path": "/home"
         },
         {
+            "id": 2,
             "name": "clients",
             "path": "/clients"
         },
         {
+            "id": 3,
             "name": "products",
             "path": "/products"
+        }
+    ],
+    "home": [
+        {
+            "id": 1,
+            "title": "Clients",
+            "subtitle": "Manage your clients",
+            "img": "https://www.shutterstock.com/image-photo/digital-guarantee-checkmark-business-checking-600nw-2312773081.jpg",
+            "content": "Check your clients, their orders and their payments",
+            "goto": "/clients"
+        },
+        {
+            "id": 2,
+            "title": "Products",
+            "subtitle": "Manage your products",
+            "img": "https://www.91-cdn.com/hub/wp-content/uploads/2022/12/Apple-Products-expected-to-launch-in-2023.png",
+            "content": "Check your products, their stock and their prices",
+            "goto": "/products"
         }
     ]
 }
