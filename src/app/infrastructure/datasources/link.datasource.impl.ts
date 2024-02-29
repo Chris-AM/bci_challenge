@@ -12,7 +12,7 @@ export class LinksDatasourceImpl implements LinksDataSource {
   private readonly baseUrl = environment.links.base_url;
   private readonly httpClient: HttpClient = inject(HttpClient);
 
-  getNavbarItems(): Observable<LinkModel[]> {
+  getLinks(): Observable<LinkModel[]> {
     const petition = this.httpClient.get<LinkModel[]>(
       `${this.baseUrl}${environment.links.paths}`
     );
