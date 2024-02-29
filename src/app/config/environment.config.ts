@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   links: {
     base_url: 'http://localhost:3000',
-    paths: '/links',
+    paths: '/paths',
   },
   expernal_links: {
     base_url: 'https://dummyjson.com',

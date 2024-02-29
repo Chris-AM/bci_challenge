@@ -1,8 +1,16 @@
 {
     "paths": [
         {
-            "clients": "clients",
-            "products": "products"
+            "name": "home",
+            "path": "/home"
+        },
+        {
+            "name": "clients",
+            "path": "/clients"
+        },
+        {
+            "name": "products",
+            "path": "/products"
         }
     ]
 }
