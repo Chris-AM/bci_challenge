@@ -38,10 +38,17 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1{
+    font-family: "lato-black" !important;
+    font-size: 2rem !important; 
+    margin: 1rem !important;
+}
+
 h2 {
-    font-family: "lato-black";
-    font-size: 2rem;
-    padding-bottom: 1rem;
+    font-family: "lato-regular" !important;
+    font-size: 1.5rem !important;
+    margin: 1.5rem !important;
+    padding-bottom: 1rem !important;
 }
 
 .cards-container {

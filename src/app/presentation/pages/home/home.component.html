@@ -1,1 +1,12 @@
-<p>home works!</p>
+<h1>Welcome to the Store Maintainer</h1>
+<h2>Here you can maintain your products and clients</h2>
+<div class="home-container">
+  @for (item of homeData(); track item.title) {
+    <app-home-cards [title]="item.title"
+    [subtitle]="item.subtitle"
+    [img]="item.img"
+    [content]="item.content"
+    [goto]="item.goto"
+    />
+  }
+</div>
