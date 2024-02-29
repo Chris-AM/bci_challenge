@@ -1,4 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: rgba(0, 0, 0, 0.8);
+    --active-color: rgba(90, 0, 130, 0.8);
+    --background-effect: rgba(178, 90, 230, 0.6);
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: "lato-black";
+    src: url("./assets/fonts/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+    font-family: "lato-bold";
+    src: url("./assets/fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+    font-family: "lato-regular";
+    src: url("./assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "raleway-variable";
+    font-weight: 700;
+    src: url("./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "raleway-italic";
+    src: url("./assets/fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf");
+}
+
+body {
+    margin: 0;
+    font-family: "lato-regular";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    font-family: "lato-black";
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.cards-container {
+    padding-top: 1rem;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: -3rem;
+    padding: 2rem 0rem;
+}
+
+.card-box {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 1.5rem;
+    max-width: 25%;
+    transition: all 0.2s ease-in-out;
+    border-radius: 5%;
+}
+
+.card-box:hover {
+    background-color: var(--background-effect);
+    /* color: white; */
+}
+
+@media (max-width: 1024px) {
+    .card-box {
+        max-width: 50%;
+        transition: all 0.2s ease-in-out;
+    }
+}
