@@ -1,5 +1,5 @@
 <div class="menus-container">
-  <mat-toolbar color="primary">
+  <mat-toolbar>
     <span class="title">{{ title() }}</span>
     <app-links />
     <app-theme />
@@ -8,11 +8,11 @@
 </div>
 
 <div class="hiden-menu">
-  <mat-toolbar color="primary">
+  <mat-toolbar>
     <mat-toolbar-row>
       <span class="title">{{ title() }}</span>
       <span class="spacer"></span>
-      <button mat-icon-button class="example-icon" (click)="onToggleMenu()">
+      <button mat-icon-button (click)="onToggleMenu()">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar-row>

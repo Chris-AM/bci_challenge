@@ -1,2 +1,4 @@
-<app-tool-bar />
-<router-outlet />
+<div [ngClass]="themeService.themeSignal()">
+    <app-tool-bar />
+    <router-outlet />
+</div> 
