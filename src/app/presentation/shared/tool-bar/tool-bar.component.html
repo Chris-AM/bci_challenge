@@ -1,6 +1,29 @@
-<mat-toolbar>
-    <span>{{title()}}</span>
+<div class="menus-container">
+  <mat-toolbar color="primary">
+    <span class="title">{{ title() }}</span>
     <app-links />
-    <app-theme/>
-    <app-get-code/>
-</mat-toolbar>
+    <app-theme />
+    <app-get-code />
+  </mat-toolbar>
+</div>
+
+<div class="hiden-menu">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="title">{{ title() }}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon" (click)="onToggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    @if(toggleMenu()){
+    <mat-toolbar-row>
+      <app-links />
+      <span class="spacer"></span>
+      <app-theme />
+      <app-get-code />
+    </mat-toolbar-row>
+    }
+  </mat-toolbar>
+</div>

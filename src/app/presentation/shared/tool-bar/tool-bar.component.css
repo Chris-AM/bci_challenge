@@ -1,0 +1,29 @@
+.menus-container {
+  display: flex;
+}
+
+.title {
+  margin: 0.5rem;
+}
+
+.hiden-menu {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .title {
+    margin: 0.5rem;
+  }
+
+  .hiden-menu {
+    display: inline;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .menus-container {
+    display: none;
+  }
+}
