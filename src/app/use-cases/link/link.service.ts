@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { LinksDatasourceImpl } from '../../infrastructure/datasources/link.datasource.impl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LinkService {
-
-  constructor() { }
+  private readonly dataSource: LinksDatasourceImpl = inject(LinksDatasourceImpl);
+  
+  getLinks() {
+    return this.dataSource.getLinks();
+  }
 }
