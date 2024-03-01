@@ -1,4 +1,10 @@
-import { AfterContentInit, ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { User } from '../../../../domain/models/client.model';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -22,9 +28,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './client-table.component.html',
   styleUrl: './client-table.component.scss',
 })
-export class ClientTableComponent  {
+export class ClientTableComponent {
   @Input() isLoadingResults = true;
   @Input() datasource: MatTableDataSource<User> = new MatTableDataSource();
+  @Output() deleteClientEvent = new EventEmitter<string>();
 
   public displayedColumns = [
     'name',
@@ -35,4 +42,8 @@ export class ClientTableComponent  {
     'actions',
   ];
 
+  public deleteClient(id: string): void {
+    console.log('delete client at child', id);
+    this.deleteClientEvent.emit(id);
+  }
 }

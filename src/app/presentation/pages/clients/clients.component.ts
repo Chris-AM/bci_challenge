@@ -22,7 +22,6 @@ import { ClientTableComponent } from './client-table/client-table.component';
 export default class ClientsComponent implements OnInit {
   private readonly service: ClientService = inject(ClientService);
 
-  public clients = signal<ClientModel[]>([]);
   public datasource: MatTableDataSource<User> = new MatTableDataSource();
   public limit = signal<number>(10);
   public select = signal<string[]>([]);
@@ -32,6 +31,12 @@ export default class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllClients();
+  }
+
+  public deleteClient(id: string): void {
+    console.log('delete client at parent' , id);
+    const parsedId = parseInt(id);
+    this.service.deleteClient(parsedId);
   }
 
   private getAllClients(): void {
@@ -45,7 +50,6 @@ export default class ClientsComponent implements OnInit {
         this.isLoadingResults = false;
         const allClients = clients.map((client) => client.total)[0];
         this.total.set(allClients);
-        this.clients.set(clients);
         this.datasource = new MatTableDataSource<User>(
           clients.map((client) => client.users).flat()
         );

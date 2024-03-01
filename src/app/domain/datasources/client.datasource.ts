@@ -7,5 +7,5 @@ export abstract class ClientDatasource {
   abstract getClientById(id: number): Observable<ClientModel>;
   abstract createClient(client: ClientModel): Observable<ClientModel>;
   abstract updateClient(client: ClientModel): Observable<ClientModel>;
-  abstract deleteClient(id: number): Observable<boolean>;
+  abstract deleteClient(id: number): void;
 }

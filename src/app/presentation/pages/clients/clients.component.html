@@ -1,4 +1,5 @@
 <app-client-table
   [datasource]="datasource"
   [isLoadingResults]="isLoadingResults"
+  (deleteClientEvent)="deleteClient($event)"
 />

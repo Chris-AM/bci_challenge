@@ -47,7 +47,9 @@ export class ClientDatasourceImpl implements ClientDatasource {
   updateClient(client: ClientModel): Observable<ClientModel> {
     return of(client);
   }
-  deleteClient(id: number): Observable<boolean> {
-    return of(true);
+  deleteClient(id: number): void {
+    //* take the array of clients and pop the client with the id
+    
+
   }
 }
