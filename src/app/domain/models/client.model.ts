@@ -14,39 +14,20 @@ export interface User {
     gender:     Gender;
     email:      string;
     phone:      string;
-    username:   string;
-    password:   string;
     birthDate:  string;
     image:      string;
-    bloodGroup: string;
     height:     number;
     weight:     number;
-    eyeColor:   EyeColor;
-    hair:       Hair;
-    domain:     string;
-    ip:         string;
     address:    Address;
-    macAddress: string;
-    university: string;
     bank:       Bank;
-    company:    Company;
-    ein:        string;
-    ssn:        string;
-    userAgent:  string;
     crypto:     Crypto;
 }
 
 export interface Address {
     address:     string;
     city?:       string;
-    coordinates: Coordinates;
     postalCode:  string;
     state:       string;
-}
-
-export interface Coordinates {
-    lat: number;
-    lng: number;
 }
 
 export interface Bank {
@@ -57,25 +38,14 @@ export interface Bank {
     iban:       string;
 }
 
-export interface Company {
-    address:    Address;
-    department: string;
-    name:       string;
-    title:      string;
-}
 
 export interface Crypto {
     coin:    Coin;
     wallet:  Wallet;
-    network: Network;
 }
 
 export enum Coin {
     Bitcoin = "Bitcoin",
-}
-
-export enum Network {
-    EthereumERC20 = "Ethereum (ERC20)",
 }
 
 export enum Wallet {
@@ -85,36 +55,10 @@ export enum Wallet {
     The0Xb9Fe6979A82Fb43Fdd9Ba9F446846Dc4Dfca3Deb = "0xb9fe6979a82fb43fdd9ba9f446846dc4dfca3deb",
 }
 
-export enum EyeColor {
-    Amber = "Amber",
-    Blue = "Blue",
-    Brown = "Brown",
-    Gray = "Gray",
-    Green = "Green",
-}
 
 export enum Gender {
     Female = "female",
     Male = "male",
 }
 
-export interface Hair {
-    color: Color;
-    type:  Type;
-}
 
-export enum Color {
-    Auburn = "Auburn",
-    Black = "Black",
-    Blond = "Blond",
-    Brown = "Brown",
-    Chestnut = "Chestnut",
-}
-
-export enum Type {
-    Curly = "Curly",
-    Straight = "Straight",
-    Strands = "Strands",
-    VeryCurly = "Very curly",
-    Wavy = "Wavy",
-}

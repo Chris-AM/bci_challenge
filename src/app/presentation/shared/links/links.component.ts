@@ -32,7 +32,6 @@ export class LinksComponent implements OnInit {
   private getNavbarItems(): void {
     this.navService.getLinks().subscribe({
       next: (items) => {
-        console.log('items', items);
         this.linkItems.set(items);
       },
     });

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ClientDatasource } from '../../domain/datasources/client.datasource';
 import { ClientModel } from '../../domain/models/client.model';
 import { environment } from '../../config/environment.config';
+import { GetClientsDto } from '../../domain/dto/get-clients.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -15,15 +16,21 @@ export class ClientDatasourceImpl implements ClientDatasource {
   //* 1 Elige alguna Api: https://dummyjson.com/
   //* Motivo: Puedo obtener diferentes tipos de datos para simular
 
-  //* 4 Necesitamos que tu App tenga la capacidad de ser 
+  //* 4 Necesitamos que tu App tenga la capacidad de ser
   //*   un CRUD que trabaje de forma emporal con la DATA de la API (...)
 
-  getAllClients(): Observable<ClientModel[]> {
+  getAllClients(parameters: GetClientsDto): Observable<ClientModel[]> {
+    const { limit, select, skip, total } = parameters;
+    const fetchUrl = `${this.baseUrl}${environment.expernal_links.clients.base_url}`;
+    const parametersUrl = `?limit=${limit}&select=${select
+      ?.join(',')
+      .toString()}&skip=${skip}&total=${total}`;
     const petition = this.httpClient.get<ClientModel[]>(
-      `${this.baseUrl}${environment.expernal_links.clients.base_url}`
+      `${fetchUrl}${parametersUrl}`
     );
     return petition;
   }
+  
   getClientById(id: number): Observable<ClientModel> {
     const petition = this.httpClient.get<ClientModel>(
       `${this.baseUrl}${environment.expernal_links.clients.base_url}/${id}`
@@ -32,17 +39,15 @@ export class ClientDatasourceImpl implements ClientDatasource {
   }
 
   //* 4 (...)  debemos poder eliminar, editar y crear data temporalmente,
-  //*          si actualizamos 
+  //*          si actualizamos
   //*          el sitio la data debe volver a su estado inicial
   createClient(client: ClientModel): Observable<ClientModel> {
-  return of(client);
-
+    return of(client);
   }
   updateClient(client: ClientModel): Observable<ClientModel> {
     return of(client);
-   
   }
   deleteClient(id: number): Observable<boolean> {
-   return of(true);
+    return of(true);
   }
 }

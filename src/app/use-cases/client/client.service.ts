@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { ClientDatasourceImpl } from '../../infrastructure/datasources/client.datasource.impl';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ClientModel } from '../../domain/models/client.model';
+import { GetClientsDto } from '../../domain/dto/get-clients.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +10,17 @@ import { ClientModel } from '../../domain/models/client.model';
 export class ClientService {
   private readonly dataSource: ClientDatasourceImpl =
     inject(ClientDatasourceImpl);
-  
-  getAllClients(): Observable<ClientModel[]> {
-    return this.dataSource.getAllClients();
+
+  getAllClients(parameters: GetClientsDto): Observable<ClientModel[]> {
+    const mappedClient = this.dataSource.getAllClients(parameters).pipe(
+      map((response: ClientModel[]) => {
+        if (Array.isArray(response)) {
+          return response.map((user) => this.mapToClientModel(user));
+        }
+        return [this.mapToClientModel(response)];
+      })
+    );
+    return mappedClient;
   }
 
   getClientById(id: number): Observable<ClientModel> {
@@ -28,5 +37,9 @@ export class ClientService {
 
   deleteClient(id: number): Observable<boolean> {
     return this.dataSource.deleteClient(id);
+  }
+
+  private mapToClientModel(data: ClientModel): ClientModel {
+    return data;
   }
 }
